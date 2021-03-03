@@ -1,0 +1,37 @@
+<!-- This is a HTML file for HTML under Templates. What index.html serves
+to do is act as a template html file for any html file inheriting its 
+attributes and styles. This includes CSS, stylesheets, scripts -->
+
+<!-- This should be the master HTML file of what each page should 
+look like and inherit it into each other page-->
+
+<!-- This is going to act as a skeleton example of inheritng from index.html
+-->
+
+<!Doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="SitePoint">
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS/main.css') }}">
+  <!-- Linking the CSS stylsheet under static/CSS/main.css. This 
+is done through url_for with the name, and under filename any subdirectories-->
+ <title> KINGDOM </title>
+   
+  {% block head %} {% endblock %}
+
+  <h2> Does this appear? </h2>
+  <!-- This in Jinja2, template engine of Flask. This is creating
+a block in the template as an area of inserting unique code to a page 
+already inheriting the base.html code. -->
+</head>
+
+<body>
+    {% block body %} 
+        <h1> Appearances </h1>
+    {% endblock %}
+
+</body>
+</html>
